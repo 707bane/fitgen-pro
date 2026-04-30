@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitGen — Générateur de Programme</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="hero-label">⚡ Programme personnalisé</span>
+    <h1>FIT<span>GEN</span><br>PRO</h1>
+    <p>Génère ton programme d'entraînement sur mesure basé sur ton profil, ton objectif et tes disponibilités.</p>
+    <a href="#form" class="hero-btn">Créer mon programme →</a>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section" id="form">
+    <div class="section-title">Ton <span>profil</span></div>
+    <p class="section-sub">Remplis les informations ci-dessous pour générer ton programme personnalisé.</p>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Prénom</label>
+        <input type="text" id="prenom" placeholder="Ex: Alex">
+      </div>
+      <div class="form-group">
+        <label>Âge</label>
+        <input type="number" id="age" placeholder="Ex: 22" min="10" max="80">
+      </div>
+      <div class="form-group">
+        <label>Poids (kg)</label>
+        <input type="number" id="poids" placeholder="Ex: 75" min="30" max="200">
+      </div>
+      <div class="form-group">
+        <label>Taille (cm)</label>
+        <input type="number" id="taille" placeholder="Ex: 178" min="120" max="220">
+      </div>
+      <div class="form-group">
+        <label>Objectif principal</label>
+        <select id="objectif">
+          <option value="">-- Choisir --</option>
+          <option value="perte">🔥 Perte de poids</option>
+          <option value="muscle">💪 Prise de masse musculaire</option>
+          <option value="cardio">🏃 Améliorer l'endurance</option>
+          <option value="forme">🧘 Remise en forme générale</option>
+          <option value="force">🏋️ Développer la force</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Niveau</label>
+        <select id="niveau">
+          <option value="">-- Choisir --</option>
+          <option value="debutant">Débutant (0-6 mois)</option>
+          <option value="intermediaire">Intermédiaire (6 mois - 2 ans)</option>
+          <option value="avance">Avancé (2+ ans)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Équipement disponible</label>
+        <select id="equipement">
+          <option value="aucun">Aucun (poids du corps)</option>
+          <option value="basique">Basique (haltères, élastiques)</option>
+          <option value="salle">Salle de sport complète</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Durée par séance</label>
+        <select id="duree">
+          <option value="30">30 minutes</option>
+          <option value="45">45 minutes</option>
+          <option value="60" selected>60 minutes</option>
+          <option value="90">90 minutes</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label>Jours d'entraînement</label>
+        <div class="days-grid" id="daysGrid">
+          <button class="day-btn" data-day="Lun" onclick="toggleDay(this)">Lun</button>
+          <button class="day-btn" data-day="Mar" onclick="toggleDay(this)">Mar</button>
+          <button class="day-btn" data-day="Mer" onclick="toggleDay(this)">Mer</button>
+          <button class="day-btn" data-day="Jeu" onclick="toggleDay(this)">Jeu</button>
+          <button class="day-btn" data-day="Ven" onclick="toggleDay(this)">Ven</button>
+          <button class="day-btn" data-day="Sam" onclick="toggleDay(this)">Sam</button>
+          <button class="day-btn" data-day="Dim" onclick="toggleDay(this)">Dim</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="generate-btn" onclick="generateProgram()">GÉNÉRER MON PROGRAMME →</button>
+  </section>
+
+  <!-- RESULT -->
+  <section class="result-section" id="result">
+    <div class="profile-bar" id="profileBar"></div>
+    <div id="programContent"></div>
+    <button class="print-btn" onclick="window.print()">🖨️ Imprimer / Sauvegarder en PDF</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
