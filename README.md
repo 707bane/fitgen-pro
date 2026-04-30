@@ -46,7 +46,7 @@ Aucune installation requise. Ouvre simplement `index.html` dans un navigateur.
 
 ## 👤 Auteur
 
-707bane — Étudiant en Bachelor DSNS à ESIEE-IT  
+Esteban Encinas — Étudiant en Bachelor DSNS à ESIEE-IT  
 Projet réalisé dans le cadre du Programme Engagement Étudiant ESIEE-IT 2025-2026.
 
 ## 📄 Licence
